@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title>EIBLO</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,45 @@
   </head>
 
   <body>
+		<header>
+			<div class="header-logo">
+				<%= link_to "EIBLO", "/home/top" %>
+			</div>
+			<% if true == true %>
+				<ul class="header-menus">
+		  		<li>
+    	      <%= "ユーザー" %>
+      	  </li>
+	        <li>
+	          <%= link_to_unless_current "random", "#" %>
+	        </li>
+	        <li>
+	          <%= link_to_unless_current "signup", "#" %>
+	        </li>
+	        <li>
+	          <%= link_to_unless_current "login", "#" %>
+	        </li>
+				</ul>
+			<% else %>
+				<ul class="header-menus">
+					<li>
+						<%= link_to_unless_current "random" %>
+					</li>
+					<li>
+						<%= link_to_unless_current "post", "#" %>
+					</li>
+					<li>
+						<%= link_to_unless_current "logout" %>
+					</li>
+				</ul>
+			<% end %>
+		</header>
+
     <%= yield %>
   </body>
+	<footer>
+		<ul class="footer-menus">
+			<%= %>
+		</ul>
+	</footer>
 </html>
