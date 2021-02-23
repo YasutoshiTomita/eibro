@@ -25,6 +25,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+				#登録と同時にログイン状態(sessionにidを格納)する
+				session[:user_id] = @user.id
         format.html { redirect_to @user, notice: "登録が完了しました" }
         format.json { render :show, status: :created, location: @user }
       else
@@ -64,6 +66,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:email, :name, :password, :image)
+      params.require(:user).permit(:email, :name, :password)
     end
 end

@@ -15,10 +15,10 @@
 			<div class="header-logo">
 				<%= link_to "EIBLO", "/home/top" %>
 			</div>
-			<% if true == true %>
+			<% if @current_user %>
 				<ul class="header-menus">
 		  		<li>
-    	      <%= "ユーザー" %>
+    	      <%= link_to_unless_current image_tag(@current_user.image, class: "image") "/users/#{@current_user.id}" %>
       	  </li>
 	        <li>
 	          <%= link_to_unless_current "random", "#" %>
