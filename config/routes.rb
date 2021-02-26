@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :posts
   resources :movies
-  resources :users
   get 'movie/show'
 
   get 'post/show'
