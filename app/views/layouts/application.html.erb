@@ -18,7 +18,7 @@
 			<% if @current_user %>
 				<ul class="header-menus">
 		  		<li>
-    	      <%= link_to_unless_current image_tag(@current_user.image, class: "image") "/users/#{@current_user.id}" %>
+    	      #link_to_unless_current image_tag() "#" 
       	  </li>
 	        <li>
 	          <%= link_to_unless_current "random", "#" %>
