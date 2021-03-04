@@ -13,25 +13,14 @@
   <body>
 		<header>
 			<div class="header-logo">
-				<%= link_to "EIBLO", "/home/top" %>
+				<%= link_to "EIBLO", "/" %>
 			</div>
-			<% if @current_user %>
+			
 				<ul class="header-menus">
-		  		<li>
+				<% if @current_user %>
+					<li>
     	      #link_to_unless_current image_tag() "#" 
       	  </li>
-	        <li>
-	          <%= link_to_unless_current "random", "#" %>
-	        </li>
-	        <li>
-	          <%= link_to_unless_current "signup", "#" %>
-	        </li>
-	        <li>
-	          <%= link_to_unless_current "login", "#" %>
-	        </li>
-				</ul>
-			<% else %>
-				<ul class="header-menus">
 					<li>
 						<%= link_to_unless_current "random" %>
 					</li>
@@ -41,15 +30,20 @@
 					<li>
 						<%= link_to_unless_current "logout" %>
 					</li>
-				</ul>
-			<% end %>
+			<% else %>
+	        <li>
+	          <%= link_to_unless_current "random", "#" %>
+	        </li>
+	        <li>
+	          <%= link_to_unless_current "signup", new_user_registration_path %>
+	        </li>
+	        <li>
+	          <%= link_to_unless_current "login", "#" %>
+	        </li>
+				<% end %>
+			</ul>
 		</header>
 
-    <%= yield %>
+   		<%= yield %>
   </body>
-	<footer>
-		<ul class="footer-menus">
-			<%= %>
-		</ul>
-	</footer>
 </html>
