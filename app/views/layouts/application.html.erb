@@ -17,7 +17,7 @@
 			</div>
 			
 				<ul class="header-menus">
-				<% if @current_user %>
+				<% if user_signed_in? %>
 					<li>
     	      #link_to_unless_current image_tag() "#" 
       	  </li>
@@ -28,7 +28,7 @@
 						<%= link_to_unless_current "post", "#" %>
 					</li>
 					<li>
-						<%= link_to_unless_current "logout" %>
+						<%= link_to_unless_current "logout",  destroy_user_session_path, method: :delete %>
 					</li>
 			<% else %>
 	        <li>
@@ -38,7 +38,7 @@
 	          <%= link_to_unless_current "signup", new_user_registration_path %>
 	        </li>
 	        <li>
-	          <%= link_to_unless_current "login", "#" %>
+	          <%= link_to_unless_current "login", new_user_session_path %>
 	        </li>
 				<% end %>
 			</ul>
