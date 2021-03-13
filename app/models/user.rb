@@ -2,7 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise	:database_authenticatable, :registerable, :rememberable, :validatable, 
-					:omniauthable, omniauth_providers: %i[facebook twitter google_oauth2]
+					:omniauthable, :timeoutable, 
+					omniauth_providers: %i[facebook twitter google_oauth2]
 
 #呼ばれたモデル(Userのprovider uid に引数代入　重複無しでemail password保存
 	
