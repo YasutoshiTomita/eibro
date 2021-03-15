@@ -19,7 +19,8 @@
 				<ul class="header-menus">
 				<% if user_signed_in? %>
 					<li>
-    	      <%= link_to_unless_current (image_tag "#{current_user.image}"), "/users/#{current_user.id}" %>
+    	      <%= link_to_unless_current (image_tag "#{current_user.image}", class: "user-image"), 
+							"/users/#{current_user.id}" %>
       	  </li>
 					<li>
 						<%= link_to "random", "#" %>

@@ -63,15 +63,15 @@ body {
   width: 100%;
   height: auto;
   min-height: 100%;
-  background-color: #fffff0;
+  background-color: white;
 }
 
 .container {
   max-width: 600px;
   margin: 60px auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 15px;
   clear: both;
+	background-color: #fffff0;
 }
 /* ヘッダー  */
 header {
